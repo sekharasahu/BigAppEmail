@@ -1,0 +1,14 @@
+  
+version: "3.2"
+services:
+  db:
+    image: 'mongo:latest'
+    container_name: 'db'
+    environment:
+      -MONGO_INITDB_DATABASE: 'bigapp'
+      -MONGO_INITDB_USERNAME: 'root'
+      -MONGO_INITDB_PASSWORD: 'root'
+    volumes:
+      - ./mongo-volume:/data/db
+    ports:
+      - '27017:27017'    
